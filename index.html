@@ -634,7 +634,7 @@
                         <div class="mt-8">
                             <h4 class="font-medium text-gray-800 mb-4">Ikuti Kami</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="p-3 bg-gray-100 rounded-full text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition">
+                                <a href="https://www.instagram.com/lokaon.id/" class="p-3 bg-gray-100 rounded-full text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                                 <a href="#" class="p-3 bg-gray-100 rounded-full text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition">
@@ -653,38 +653,59 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="lg:w-1/2 fade-in" style="transition-delay: 0.2s">
-                    <div class="bg-white p-8 rounded-xl shadow-md hover-scale border border-gray-100">
-                        <h3 class="text-xl font-semibold mb-6 text-gray-800">Kirim Pesan</h3>
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
-                                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
-                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 hover-scale">
-                                    Kirim Pesan
-                                    <i class="fas fa-paper-plane ml-2"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+    <div class="bg-white p-8 rounded-xl shadow-md hover-scale border border-gray-100">
+        <h3 class="text-xl font-semibold mb-6 text-gray-800">Kirim Pesan</h3>
+        <form id="wa-form" class="space-y-6" onsubmit="sendToWhatsApp(event)">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
                 </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                </div>
+            </div>
+            <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+            </div>
+            <div>
+                <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 hover-scale">
+                    Kirim Pesan
+                    <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault(); // Hindari reload halaman
+
+    // Ambil nilai dari input form
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Format isi pesan untuk WhatsApp
+    const whatsappMessage = `Halo, saya ingin konsultasi.%0A%0A*Nama:* ${name}%0A*Email:* ${email}%0A*Subjek:* ${subject}%0A*Pesan:* ${message}`;
+
+    // Nomor WhatsApp tujuan (tanpa + dan spasi)
+    const phoneNumber = "6281234567890";
+
+    // Arahkan ke WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+}
+</script>
+
             </div>
         </div>
     </section>
@@ -699,7 +720,7 @@
                     </h3>
                     <p class="text-gray-400 mb-4">Kreativitas digital tanpa batas dari Majalengka untuk dunia.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition">
+                        <a href="https://www.instagram.com/lokaon.id/" class="text-gray-400 hover:text-white transition">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition">
@@ -743,18 +764,18 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 text-blue-500"></i>
-                            <span>hello@lokaon.com</span>
+                            <span>lokaon@gmail.com</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
-                            <span>+62 812-3456-7890</span>
+                            <span>+62 858-4628-3277</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Lokaon. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Lokaon. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
                     <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
