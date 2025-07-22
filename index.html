@@ -801,6 +801,18 @@ function sendToWhatsApp(event) {
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
         <i class="fas fa-arrow-up"></i>
     </button>
+ <button id="ai-chatbot-button" class="fixed bottom-8 left-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 flex items-center justify-center w-14 h-14 z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <path d="M10 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-1l1.594 1.594a3 3 0 0 0 4.406-4.122L20.914 12l1.086-1.472a3 3 0 0 0-4.406-4.122L17 10V8a3 3 0 0 0-3-3h-4Z"/>
+        <path d="M2 8a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z"/>
+    </svg>
+</button>
+
+<script>
+    document.getElementById('ai-chatbot-button').addEventListener('click', function() {
+        window.open('https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/22/19/20250722194532-50EA4TFK.json', '_blank');
+    });
+</script>
 
     <!-- JavaScript -->
     <script>
