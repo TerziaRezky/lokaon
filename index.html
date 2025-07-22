@@ -801,10 +801,18 @@ function sendToWhatsApp(event) {
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
         <i class="fas fa-arrow-up"></i>
     </button>
- <button id="ai-chatbot-button" class="fixed bottom-8 left-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 flex items-center justify-center w-14 h-14 z-50">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-        <path d="M10 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-1l1.594 1.594a3 3 0 0 0 4.406-4.122L20.914 12l1.086-1.472a3 3 0 0 0-4.406-4.122L17 10V8a3 3 0 0 0-3-3h-4Z"/>
-        <path d="M2 8a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z"/>
+ <button id="ai-chatbot-button" class="fixed bottom-8 left-8 bg-gradient-to-br from-purple-500 to-pink-500 text-white p-3 rounded-full shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center w-14 h-14 z-50 animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+        <!-- Robot head -->
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <!-- Eyes -->
+        <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+        <!-- Mouth -->
+        <path d="M9 15h6" />
+        <!-- Antenna -->
+        <path d="M12 3v1" />
+        <circle cx="12" cy="2" r="1" fill="currentColor"/>
     </svg>
 </button>
 
