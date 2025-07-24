@@ -4,9 +4,11 @@
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokaon - Digital Creativity from Majalengka</title>
-    <link rel="icon" href="lokaon.png" type="image/png">u
+    <link rel="icon" href="lokaon.png" type="image/png">
+ 
     
     <!-- Primary Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">  
     <meta name="title" content="Lokaon - Digital Creativity from Majalengka">
     <meta name="description" content="Solusi desain dan pengembangan web kreatif dari Majalengka untuk bisnis modern Anda.">
     <meta name="keywords" content="desain grafis, web development, ui/ux, landing page, majalengka, digital kreatif">
@@ -250,14 +252,18 @@
     </nav>
 
 <!-- Hero Section -->
-<!-- Fullscreen 3D Robot Only -->
+<!-- Tampilan 3D Robot via iframe -->
 <section id="home" class="w-full h-screen overflow-hidden">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.37/build/spline-viewer.js"></script>
-    <spline-viewer 
-        url="https://prod.spline.design/YkqN-IG3wvE9Wm3m/scene.splinecode" 
-        style="width: 100%; height: 100%;"
-    ></spline-viewer>
+    <iframe
+        src="https://my.spline.design/robotdemo-d2ec9b1fddc3c765d073d04d74d0c71d/"
+        frameborder="0"
+        width="100%"
+        height="100%"
+        allowfullscreen
+        style="pointer-events: none;"
+    ></iframe>
 </section>
+
 
 
 
